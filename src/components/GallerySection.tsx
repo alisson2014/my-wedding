@@ -1,18 +1,38 @@
-import { Typography, Container, Box } from '@mui/material';
+import { useState } from 'react';
+import imgNoivado from '../assets/noivado.webp';
+import imgPerdoes from '../assets/perdoes.webp';
+import imgVR from '../assets/vr.webp';
+import { Typography, Container, Box, Skeleton } from '@mui/material';
 import { CameraAlt } from '@mui/icons-material';
 
+interface Photo {
+  url: string;
+  alt: string;
+};
+
 const GallerySection = () => {
-  const photos = [
+  const [imagesLoaded, setImagesLoaded] = useState<Record<number, boolean>>({});
+
+  const handleImageLoad = (index: number) => {
+    setTimeout(() => {
+      setImagesLoaded((prev) => ({
+        ...prev,
+        [index]: true,
+      }));
+    }, 250);
+  };
+
+  const photos: Photo[] = [
     {
-      url: "/noivado.jpg",
+      url: imgNoivado, 
       alt: "Nosso noivado"
     },
     {
-      url: "/perdoes.jpg",
+      url: imgPerdoes,
       alt: "Vermelho e Branco"
     },
     {
-      url: "/vr.jpg",
+      url: imgVR,
       alt: "Nós de branco"
     }
   ];
@@ -31,10 +51,10 @@ const GallerySection = () => {
           display: 'flex',
           flexDirection: 'row',
           gap: 2,
-          overflowX: { xs: 'auto', md: 'visible' }, 
+          overflowX: { xs: 'auto', md: 'visible' },
           scrollSnapType: { xs: 'x mandatory', md: 'none' },
           pb: 2,
-          '&::-webkit-scrollbar': { display: 'none' }, 
+          '&::-webkit-scrollbar': { display: 'none' },
           scrollbarWidth: 'none',
         }}
       >
@@ -48,30 +68,46 @@ const GallerySection = () => {
               borderRadius: 4,
               overflow: 'hidden',
               boxShadow: 3,
-              height: { xs: 400, md: 500 }, 
+              height: { xs: 400, md: 500 },
+              backgroundColor: 'grey.100' 
             }}
           >
-            <img 
-              src={photo.url} 
-              alt={photo.alt} 
-              style={{ 
-                width: '100%', 
-                height: '100%', 
+            {!imagesLoaded[index] && (
+              <Skeleton 
+                variant="rectangular" 
+                width="100%" 
+                height="100%" 
+                animation="wave" 
+                sx={{ position: 'absolute', top: 0, left: 0, zIndex: 1 }}
+              />
+            )}
+
+            <img
+              src={photo.url}
+              alt={photo.alt}
+              loading={index === 0 ? "eager" : "lazy"}
+              decoding="async"
+              onLoad={() => handleImageLoad(index)} 
+              style={{
+                width: '100%',
+                height: '100%',
                 objectFit: 'cover',
-                display: 'block' 
-              }} 
+                display: 'block',
+                opacity: imagesLoaded[index] ? 1 : 0,
+                transition: 'opacity 0.5s ease-in-out'
+              }}
             />
           </Box>
         ))}
       </Box>
-      
-      <Typography 
-        variant="caption" 
-        sx={{ 
-          display: { xs: 'block', md: 'none' }, 
-          textAlign: 'center', 
+
+      <Typography
+        variant="caption"
+        sx={{
+          display: { xs: 'block', md: 'none' },
+          textAlign: 'center',
           color: 'text.secondary',
-          mt: 1 
+          mt: 1
         }}
       >
         Deslize para ver mais →
