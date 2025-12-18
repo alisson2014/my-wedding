@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import imgNoivado from '../assets/noivado.webp';
+import imgNoivado from '/noivado.webp';
 import imgPerdoes from '../assets/perdoes.webp';
 import imgVR from '../assets/vr.webp';
 import { Typography, Container, Box, Skeleton } from '@mui/material';
