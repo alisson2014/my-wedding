@@ -42,7 +42,7 @@ const GallerySection = () => {
       <Container sx={{ py: 3 }} maxWidth="lg">
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 4, gap: 1 }}>
           <CameraAlt color="primary" />
-          <Typography variant="h4" align="center" color="primary" sx={{ fontWeight: 'bold', fontFamily: '"Playfair Display", serif' }}>
+          <Typography variant="h4" align="center" color="primary" sx={{ fontWeight: 'bold' }}>
             Nossos Momentos
           </Typography>
         </Box>
