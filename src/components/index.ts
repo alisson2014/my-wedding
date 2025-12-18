@@ -4,5 +4,6 @@ import InfoSection from "./InfoSection";
 import GiftSection from "./GiftSection";
 import RSVPSection from "./RSVPSection";
 import Footer from "./Footer";
+import GallerySection from "./GallerySection";
 
-export { Header, HeroSection, InfoSection, GiftSection, RSVPSection, Footer };
+export { Header, HeroSection, InfoSection, GiftSection, RSVPSection, Footer, GallerySection };
