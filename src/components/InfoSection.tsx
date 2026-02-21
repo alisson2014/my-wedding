@@ -37,7 +37,7 @@ const InfoSection = () => (
           {/* Mapa Cerimônia */}
           <Box sx={{ height: { xs: 300, md: 400 }, width: '100%' }}>
             <iframe 
-              src="https://www.google.com/maps/embed/v1/place?key=SUA_API_KEY_AQUI&q=R.+Bernardino+Manoel+de+Freitas,+165+-+Vila+Santa+Isabel,+Caçapava+-+SP" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3669.561869274138!2d-45.707427424957345!3d-23.11312914527753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc53d76228b405%3A0xb1b20ca7e62db415!2sR.%20Bernardino%20Manoel%20de%20Freitas%2C%20165%20-%20Vila%20Santa%20Isabel%2C%20Ca%C3%A7apava%20-%20SP%2C%2012284-410!5e0!3m2!1spt-BR!2sbr!4v1771632763623!5m2!1spt-BR!2sbr" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
