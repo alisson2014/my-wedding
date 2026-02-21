@@ -30,14 +30,14 @@ const InfoSection = () => (
               </Typography>
             </Box>
             <Typography variant="caption" display="block" gutterBottom>
-              Estr. Mun. Nelson Tavares da Silva, 1560 - Bom Retiro
+              R. Bernardino Manoel de Freitas, 165 - Vila Santa Isabel, Caçapava - SP
             </Typography>
           </CardContent>
           
           {/* Mapa Cerimônia */}
           <Box sx={{ height: { xs: 300, md: 400 }, width: '100%' }}>
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.1072979538217!2d-45.7678332!3d-23.202759999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4d4963ea0e0b%3A0x1b686ba77f3757c5!2sEstr.%20Mun.%20Nelson%20Tavares%20da%20Silva%2C%201560%20-%20Bom%20Retiro%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP%2C%2012226-202!5e0!3m2!1spt-BR!2sbr!4v1765836239583!5m2!1spt-BR!2sbr" 
+              src="https://www.google.com/maps/embed/v1/place?key=SUA_API_KEY_AQUI&q=R.+Bernardino+Manoel+de+Freitas,+165+-+Vila+Santa+Isabel,+Caçapava+-+SP" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
